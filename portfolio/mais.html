@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>MAIS project</title>
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/bootstrap.min.js"></script>
+        <style>
+
+            #header {
+                padding-top: 160px;
+
+                background-image:  url("../assets/mais/header.png");
+                background-position-x: right;
+                background-position-y: bottom;
+                background-origin: content-box;
+                background-size: auto 115%;
+                background-repeat: no-repeat;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <section class="project_header">
+            <div id="header" class="container-fluid">
+                <h1>MAIS</h1>
+                <h2>Multimodal Authentication Integration System</h2>
+
+                <div class="project_header_info">
+                    <h3>_Year = 2022</h3>
+                    <h3>_Context = Biometrics</h3>
+                    <h3>_Project-type = Group</h3>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="project_subheader">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-lg-3 order-lg-1 order-3" style="margin-top:20px">
+                        <p>The aim of the project was to capture an item of biometric data from a person, which can be a photo of their face or a clip of their voice and then compare it to the biometric data of several other people kept in a database.</p>
+                    </div>
+
+                    <div class="col-lg-7 order-lg-2 order-2" style="margin-top: 20px; padding: 0 5%">
+                        <h4>User friendly biometric system used for authentication that runs locally</h4>
+                        <p>Our goal was to develop a user-friendly biometric system that includes some of the most prevalent biometrics identification methods, such as face ID and voice recognition. </p>
+                    </div>
+
+                    <div class="col-lg-2 order-lg-3 order-1">
+                        <h5>_Source.code</h5>
+                        <a href="https://github.com/davidgmorais/mais"><p>github.com/davidgmorais/mais</p></a>
+
+                        <h5>_Tools</h5>
+                        <ul>
+                            <li>Python</li>
+                            <li>OpenCV</li>
+                            <li>PyAudio</li>
+                            <li>MySQL</li>
+                        </ul>
+
+                        <h5>_Deploy</h5>
+                        <p>Docker container running locally</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="body-section">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6"  style="padding: 5% 2% 0 2%;">
+                        <h4>Two modal authentication system based on</h4>
+                        <div class="row">
+                            <div class="col-2" style="padding: 0 2%; margin: auto">
+                                <img style="width: 100%" src="../assets/mais/faceID_icon.png">
+                            </div>
+                            <div class="col-10" style="padding: 0 8% 0 6%">
+                                <p>Face authentication, which was preceded by face detection from an image, then extraction of specific features that are used by dedicated algorithms. The results or extracted features are stored in a database which is referenced at each user authentication attempt by performing the verification process, in a 1:1 relationship.</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-2" style="padding: 0 2%; margin: auto">
+                                <img style="width: 100%" src="../assets/mais/voiceRecognition_icon.png">
+                            </div>
+                            <div class="col-10" style="padding: 0 8% 0 6%">
+                                <p>Voice-based authentication, in which a voice recording undergoes, among other things, filtering, signal alignment and removal of redundant data in order to extract features to be used by a dedicated algorithm. The results or extracted features are stored in a database which is referenced at each user authentication attempt by performing the verification process.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3 col-6"  style="padding: 18% 0 0 3%;">
+                        <h6>Reliable</h6>
+                        <p>The authentication system has two authentication methods using physical and behavioral biometrics as well as a well-thought-out architecture, thanks to which it will be possible to develop the project.</p>
+                        <br><br>
+
+                        <h6>High usability</h6>
+                        <p>Implements an easy-to-use technology in which only our creativity limited us.</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6"  style="padding: 18% 2% 0 2%;">
+                        <h6>Fast</h6>
+                        <p>Employs of algorithms that allow for quick face and voice recognition.</p>
+                        <br><br>
+
+                        <h6>Data Protection</h6>
+                        <p>All data entered during the registration and user authentication process are encrypted and stored safely. Furthermore,  implements a dashboard to display alerts/logs of how the system is used.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br>
+
+        <section class="body-section">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-lg-8 order-2 order-lg-1" style="padding: 0 3%">
+                        <img style="width: 100%" src="../assets/mais/face_interface.png">
+                        <div class="row">
+                            <div class="col-lg-4" style="padding-right: 2%; padding-top: 2%">
+                                <p>When an user is authenticated successfully, the model is improved by training it with the frame used in the authentication.</p>
+                            </div>
+
+                            <div class="col-lg-8"  style="padding-left: 2%; padding-top: 2%">
+                                <p>During the test stages of the project some limitations were recognized and discussed, such as the effect that the lighing has on the system, glasses hindering the success rate due to reflection and high quality true video being able to bypass the liveness detection.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 order-1 order-lg-2"  style="padding: 0 2%;">
+                        <h4>Face ID</h4>
+                        <p>The Face ID module was developed using OpenCV and can detect whenever a face is present in the frame. Contains safety mechanisms to prevent multiple people being present in the image at the same time as well as a liveness detector that checks for eye blinks, to ensure that a picture of bust is not used.</p>
+                        <p>The process uses the Local Binary Pattern Histogram algorithm to enroll and authenticate an user, where the former consists on training the algorithm with collected data in order to execute the latter.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <br>
+
+        <section class="body-section">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-lg-8 order-2 order-lg-1" style="padding: 0 3%">
+                        <img style="width: 100%" src="../assets/mais/voice_interface.png">
+                        <div class="row">
+                            <div class="col-lg-8"  style="padding-left: 2%; padding-top: 2%">
+                                <p>Known limitations of this module include the pronunciation inherent to different accents making it harder for the software to detect the secret passphrase being said, as well as the presence of background noise and other voices interfering with the user's.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 order-1 order-lg-2"  style="padding: 0 2%;">
+                        <h4>Voice Recognition</h4>
+                        <p>Developed using PyAudio and extracts features from audio clips where the user repeats the prompted secret words, being a text dependent authentication.</p>
+                        <p>The process uses a Gaussian Mixture Model which aggregates the features into clusters and trains the model based on the number of arbitrary clips the user uses as input. The authentication is performed through the logarithmic likelihood of the features matching the stored model, where the threshold can be adjusted and has a direct impact of the False-Positive and False-Negative rates.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <br>
+
+        <section class="body-section">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-lg-7 order-lg-2" style="padding: 0 2% 5% 2%;">
+                        <h4 style="text-align: right">Authentication system based on face and voice</h4>
+                        <p>MAIS was developed to support a multi-modal system which implements multiple biometric authentication methods, in such a way that in order for a user to successfully authenticate itself they must complete both authentication challenges, in resemblance to a two-factor authentication system.</p>
+                        <p>The main obstacles on the development of the work was the initial ideal requiring some tinkering, where a external system running on a raspberry pi as a server was altered in favor of the authentication system running locally. Furthermore, and after the project delivery, we consider that the goals were met however the optimal performance of the system is found in an isolated and controlled environment, due to lightning and noise issues.</p>
+                    </div>
+
+                    <div class="col-lg-5 order-lg-1"  style="padding: 15% 2% 0 2%; margin-bottom: 0">
+                        <h4>In a more individual level...</h4>
+                        <p>This project allow me to work in an area of bigger interest to me, that being authentication systems as well as the privacy issues implicated in these, however it also helped me explore biometric forms of authentication that certainty helped me understand a little better how these types of systems must be build and optimized.</p>
+                        <p>As mentioned the initial ideal had to be altered, which was a shame due to the fact that I was eager to implement a biometric system that did not run locally, and had to employ communication protocols that should be secured in order to swap very sensitive information over unprotected and untrusted networks.</p>
+                    </div>
+
+                    <div class="col-lg-4 offset-lg-8 order-lg-3" style="text-align: right; padding: 0 3%;">
+                        <h4 style="text-align: right; color: white; padding-top: 30px;">Next project</h4>
+                        <a href="firelab.html" class="next-project">FIRELAB</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </body>
+</html>

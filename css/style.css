@@ -1,0 +1,112 @@
+:root {
+    --bg-color: #112240;
+    --highligh: #3DC58D;
+    --font-sans: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+    --font-mono: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+h1 {
+    color: var(--highligh);
+    font-family: var(--font-sans);
+    font-size: 120px;
+    font-weight: bolder;
+    margin: 0;
+}
+
+h2 {
+    color: white;
+    font-family: "OpenSans", sans-serif;
+    font-size: 62px;
+}
+
+h3 {
+    font-size: 24px;
+    font-family: var(--font-mono);
+    color: white;
+}
+
+h4 {
+    color: var(--highligh);
+    font-family: "OpenSans", sans-serif;
+    font-size: 37px;
+}
+
+h5 {
+    font-size: 21px;
+    font-family: var(--font-mono);
+    color: var(--highligh);
+}
+
+h6 {
+    color: var(--highligh);
+    font-family: "OpenSans", sans-serif;
+    font-size: 21px;
+}
+
+p {
+    color: white;
+    font-family: "OpenSans", sans-serif;
+    font-size: 21px;
+    text-align: justify;
+}
+
+a {
+    color: white;
+}
+
+li {
+    color: white;
+    font-family: "OpenSans", sans-serif;
+    font-size: 21px;
+    text-align: justify;
+}
+
+.project_header, .project_subheader, .body-section {
+    padding: 0 120px;
+}
+
+.project_subheader {
+    margin-top: 100px;
+}
+
+.project_header_info {
+    margin-top: 70px;
+}
+
+.body-section {
+    margin: 5% 0;
+}
+
+.next-project {
+    font-family: var(--font-sans);
+    font-size: 120px;
+    font-weight: bolder;
+    text-decoration: none;
+
+    color: transparent;
+    -webkit-text-stroke: 4px var(--highligh);
+}
+
+.next-project:hover {
+    font-family: var(--font-sans);
+    font-size: 120px;
+    font-weight: bolder;
+    text-decoration: none;
+
+    color: var(--highligh);
+}
+
+.highlight {
+    color: var(--highligh);
+}
+
+.project_link {
+    font-size: 16px;
+    font-family: var(--font-mono);
+    color: var(--highligh);
+}
+
