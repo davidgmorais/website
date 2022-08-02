@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Verifiable Election project</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+
+      #header {
+        padding-top: 160px;
+      }
+
+      @media (min-width: 1080px) {
+        #header {
+          padding-top: 160px;
+
+          background-image:  url("../assets/verifiableElection/header.png");
+          background-position-x: right;
+          background-position-y: bottom;
+          background-origin: content-box;
+          background-size: auto 115%;
+          background-repeat: no-repeat;
+        }
+      }
+
+
+    </style>
+  </head>
+
+  <body>
+
+  <section class="project_header">
+    <div id="header" class="container-fluid">
+      <h1>Verifiable Election</h1>
+      <h2>Using SGX Enclaves</h2>
+
+      <div class="project_header_info">
+        <h3>_Year = 2022</h3>
+        <h3>_Context = Trusted Environments</h3>
+        <h3>_Project-type = Individual</h3>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="project_subheader">
+    <div class="container-fluid">
+      <div class="row">
+
+
+        <div class="col-lg-10 order-lg-1 order-2" style="margin: auto 0; padding: 0 5%">
+          <div class="col-lg-9">
+            <h4>Exploration of secure environments and sealing  of data for the execution of trusted actions.</h4>
+          </div>
+
+          <div class="col-lg-9 offset-lg-1">
+            <p>Implementation of a ballot box using an SGX enclave, in order to ensure that all votes are cast and valid votes are properly counted, as well as allowing voters to check if their vote was effectively included in the tally.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 order-lg-2 order-1" style="max-width: 100%">
+          <h5>_Source.code</h5>
+          <a href="https://github.com/davidgmorais/verifiable-election"><p >github.com/davidgmorais /verifiable-election</p></a>
+
+          <h5>_Tools</h5>
+          <ul>
+            <li>C++</li>
+            <li>Intel SGX Enclaves</li>
+            <li>OpenSSL Crypto</li>
+            <li>Python</li>
+          </ul>
+
+          <h5>_Deploy</h5>
+          <p style="text-align: left">SGX Enclaves on simulation mode</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="body-section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-5"  style="padding: 0 2%;">
+          <h4>The election rules</h4>
+          <div class="row">
+            <div class="col-1" style="padding: 0 2%;">
+              <span style="color: white; font-size: 45px">&#9312;</span>
+            </div>
+            <div class="col-11" style="padding: 0 2% 0 3%">
+              <p>An election outcome is legitimate if and only if all cast and valid votes were included in the final tally.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-1" style="padding: 0 2%;">
+              <span style="color: white; font-size: 45px">&#9313;</span>
+            </div>
+            <div class="col-11" style="padding: 0 2% 0 3%">
+              <p>An election outcome is legitimate if and only if all votes were correctly counted in the final outcome.</p>
+            </div>
+          </div>
+          <br>
+          <p>To ensure both these requirements, we made use of an SGX enclave for implementing a ballot box, where such enclave safeguards that all cast and valid votes are properly counted and voters can check if their vote was effectively included in the tally.</p>
+
+        </div>
+
+        <div class="col-lg-6 col-12"  style="padding: 13% 0 0 3%;">
+          <h4>The Split</h4>
+          <p>In order to start the project and meet the requirements, the development was divided into two applications, each responsible for an election entity.</p>
+          <br>
+
+          <div class="row">
+            <div class="col-lg-6">
+              <h6>Voter App</h6>
+              <p style="margin-bottom: 0">Represents a voter in the context of the problem and provides functionalities that allow a user to generate their credentials and cast a vote</p>
+            </div>
+
+            <div class="col-lg-6">
+              <h6>Ballot App</h6>
+              <p style="margin-bottom: 0">Representation of a ballot box in this context, allowing for protection of  votes as well as running and tallying an election.</p>
+              <br><br>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <br>
+
+
+
+  <section class="body-section">
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-lg-4"  style="padding: 5% 2% 0 2%; margin-top: auto">
+          <h4>Voter App</h4>
+          <p>The Voter enclave and respective application represent a voter entity and allows for a set of actions containing the generation of an asymmetric key pair that act as credentials and identify and authenticate the voter, export of the public key and cast a signed and sealed vote, assuring its validity.</p>
+        </div>
+
+        <div class="col-lg-3 col-6"  style="padding: 0 0 0 4%; margin-top: auto">
+          <h6>Generate</h6>
+          <p>Generates the credentials that identify and authenticate the voter. These are an asymmetric key pair and are stored outside the enclave for being used many times. Thus, they had to be sealed in such a way that they should be password-based so that attackers cannot steal and use a voter's credentials, while legitimate credentials' owners can reuse them.</p>
+        </div>
+
+        <div class="col-lg-4 col-6"  style="padding: 0 2% 0 2%; margin-top: auto">
+          <h6>Publish</h6>
+          <p>Exports a voter public key from its credentials, which will be used as an identifier.</p>
+          <br>
+
+          <h6>Vote</h6>
+          <p>Generates a vote that is encrypted using  the provided Ballot box public key and signed with the voter's private key. The vote also includes the voter's identifier in  order to check the vote admissibility by the Ballot box.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <br>
+
+
+
+  <section class="body-section">
+    <div class="container-fluid">
+      <div class="row">
+
+
+        <div class="col-lg-7  offset-lg-1"  style="padding: 0 4% 0 4%;">
+          <h4>Ballot App</h4>
+          <p>The Ballot enclave and respective application represent a ballot box entity and allows for a set of actions in regards to an election, which contain actions to generate of an asymmetric key pair that act as credentials to assure vote confidentiality, export the public key, run a valid election and verify if the state of a voter's vote.</p>
+
+          <div class="row">
+            <div class="col-lg-7">
+              <h6>Run</h6>
+              <p>Runs an election, by loading the Ballot's credentials, the public keys of the authorised voters. Then loads and validates the votes, silently excluding the invalid ones and resulting in a list of votes in a random order.</p>
+            </div>
+
+            <div class="col-lg-5">
+              <h6>Check</h6>
+              <p>Checks if a voter's vote was counted, with a process similar to running an election, but no list of votes is produced</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-lg-4"  style="padding: 0 2% 0 2%; margin-top: auto">
+          <h6>Generate</h6>
+          <p>Generates the credentials that identify and authenticate the ballot box. These are an asymmetric key pair and are stored outside the enclave for being used many times. Thus, they had to be sealed in such a way that should be based on the enclaves' MRENCLAVE and MRSIGNER values, in order to only allow the current enclave version to access to the votes.</p>
+
+          <h6>Publish</h6>
+          <p>Exports the ballot's public key from its credentials.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <br>
+
+  <section class="body-section">
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-lg-7 order-2 order-lg-2" style="padding: 0 3%">
+          <img style="width: 100%" src="../assets/verifiableElection/voterDataStructs.png" alt="SGX Enclave designed data structures for message exchange and data storage">
+          <div class="row">
+            <div class="col-lg-10" style="padding-right: 2%; padding-top: 2%">
+              <p>The interfaces were designed in a simple fashion, using the CLI nature to try and minimise the user interaction in run-time in order to simplify and automate testing. Hence the developed tools take their arguments as parameters from the command line call through flags.</p>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="col-lg-5 order-1 order-lg-2"  style="padding: 0 2%;">
+          <h4>Design concerns</h4>
+          <p>The design of interactions between the trusted and untrusted part of the application were a concern since the beginning of the inception phase, hence they were one of the first aspects to be prototyped, through the EDL syntax. Furthermore, trusted cryptographic algorithms to seal the data, check integrity and generate credentials were studied and choose before the implementation phases </p>
+          <p>Specific data structures were defined for each type of  message exchanged between the trusted and untrusted environment, as well as the format of the data to be sealed and stored in order to keep consistency and data integrity.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <section class="body-section">
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-lg-7 offset-lg-5" style="padding: 0 2% 0 2%;">
+          <p>Possible limitations include, perhaps and because of its importance, performing the derivation of a key from a password provided by the user outside the enclave, since the purpose of the enclave was not to trust the CPU or memory, to do this operation outside the enclave.</p>
+          <p>This could have potential consequences, however none of the trusted cryptographic libraries had anything suitable for generating password-based keys.</p>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-5"  style="padding: 0 2% 0 2%; margin-bottom: 0">
+          <h4>On a more individual level...</h4>
+          <p>This Verifiable Election was inserted in the context of multiple projects where I was a little out of my comfort zone due to the fact that they were developed in a lower programming language. These combined theoretical security concepts with implementations where little documentation was available which resulted in a lot of push and pull at times during the development and, maybe as a consequence of these facts, more knowledge was obtained. Hence, I can safely say that these projects had a lot of additional value taken away from them as a whole.</p>
+          <p>However, they also served to prove to myself that I was capable of doing work at a lower level than I am used to, using concepts that I was having some difficulty grasping at first. Throughout them, I came to the resolution that I was more persistent that I gave myself credit for, ending them with a better sense of the work I could accomplish and, honestly, a new-found interest in topics in regards to areas such as this one.</p>
+        </div>
+
+        <div class="col-lg-7" style="text-align: right; padding: 0 3%; margin-top: auto">
+          <h4 style="text-align: right; color: white; padding-top: 30px;">Next project</h4>
+          <a href="firelab.html" class="next-project">FIRELab</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  </body>
+</html>

@@ -83,6 +83,7 @@ li {
 
 .next-project {
     font-family: var(--font-sans);
+    text-align: right;
     font-size: 120px;
     font-weight: bolder;
     text-decoration: none;
