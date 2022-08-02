@@ -10,14 +10,19 @@
 
             #header {
                 padding-top: 160px;
-
-                background-image: url("../assets/firelab/header.png");
-                background-position-x: right;
-                background-position-y: bottom;
-                background-origin: content-box;
-                background-size: auto 115%;
-                background-repeat: no-repeat;
             }
+
+            @media (min-width: 1080px) {
+                #header {
+                    background-image: url("../assets/firelab/header.png");
+                    background-position-x: right;
+                    background-position-y: bottom;
+                    background-origin: content-box;
+                    background-size: auto 115%;
+                    background-repeat: no-repeat;
+                }
+            }
+
 
         </style>
     </head>
@@ -48,7 +53,7 @@
 
                     <div class="col-lg-5 order-3 order-lg-2" style="margin-top: 70px; padding: 0 5%">
                         <h6>All this in a responsive, easy-to-use, all-in-one platform.</h6>
-                        <p>The goal of the project was to develop a set of tools as well as implement and adapt already developed tools and aggregate them in a ready to use web application of processing support, analysis and visualization of data on the forest fire propagation and gas emission to the atmosphere.</p>
+                        <p>The goal of the project was to develop a set of tools as well as implement and adapt already developed ones and aggregate them in a ready-to-use web application of processing, support, analysis and visualisation of data such as forest fire propagation and gas emission to the atmosphere.</p>
                     </div>
 
                     <div class="col-lg-2 order-1 order-lg-3">
@@ -80,25 +85,25 @@
                     <div class="col-lg-4 order-lg-1 order-2" style="padding: 0 3%">
                         <div class="row">
                             <div class="col-lg-12 col-6">
-                                <img style="width: 100%" src="../assets/firelab/smoke.png">
+                                <img style="width: 100%" src="../assets/firelab/smoke.png" alt="Frame where smoke obstructs the vision of the area of interest.">
                                 <br><br>
                             </div>
 
                             <div class="col-lg-12 col-6">
-                                <img style="width: 100%" src="../assets/firelab/heat.png">
+                                <img style="width: 100%" src="../assets/firelab/heat.png" alt="Image of a fire taken by an thermal camera.">
                             </div>
                         </div>
                     </div>
 
                     <div class="col-lg-4 order-1 order-lg-2"  style="padding: 5% 2% 0 2%;">
-                        <h4>The fixable problem</h4>
-                        <p>Great part of the work regarding the visualization and characterization of fire focus areas were being done manually by the engineers, resulting in a slow, repetitive and fastidious process, which could be prone to error.</p>
-                        <p>Additionally, segmenting the burn area from a video of images was a challenging task due to the erratic behavior of flames and heavy smoke obstruction of crucial parts of the frame.</p>
+                        <h4>The fixed problem</h4>
+                        <p>Great part of the work regarding the visualisation and characterization of fire focus areas were being done manually by the engineers, resulting in a slow, repetitive and fastidious process which could be prone to error.</p>
+                        <p>Additionally, segmenting the burn area from a video or images was a challenging task due to the erratic behaviour of flames and heavy smoke obstruction of crucial parts of the frame.</p>
                     </div>
 
                     <div class="col-lg-4 order-3 order-lg-3"  style="padding: 5% 2% 0 2%;">
-                        <p>The majority of the tools developed at the time were all CLI based, which resulted in only people with some knowledge or training in the technological area having less problems using.</p>
-                        <p>With this in mind, the goal of the work centered its attention on improving the already implemented and existing tools as well as bringing new ones which consequently eased the effort made by specialists by streamlining and automating the process as a whole.</p>
+                        <p>The majority of the tools developed at the time were all CLI based, which resulted in only people with some knowledge or training in the technological area using them with ease and proficiency.</p>
+                        <p>With this in mind, the goal of the work centred its attention on improving the already implemented and existing tools as well as creating new ones which consequently eased the effort made by specialists by streamlining and automating the process as a whole.</p>
                     </div>
 
                 </div>
@@ -111,21 +116,21 @@
                 <div class="row">
 
                     <div class="col-lg-8 order-2 order-lg-2" style="padding: 0 3%">
-                        <img style="width: 100%" src="../assets/firelab/vegetationCLass.png">
+                        <img style="width: 100%" src="../assets/firelab/vegetationCLass.png" alt="FIRELab interface showing the result of an automated vegetation classification.">
                         <div class="row">
                             <div class="col-lg-6" style="padding-right: 2%; padding-top: 2%">
                                 <p>This tool can streamline the classification process, employing the automation algorithm, however it does not relinquish the possibility of manually classifying or refining the result.</p>
                             </div>
 
                             <div class="col-lg-6"  style="padding-left: 2%; padding-top: 2%">
-                                <p>The web application also allows to export the classified grid in the format of a fuel map that is compatible with third-party apps such as FARSITE.</p>
+                                <p>The web application also allows exporting the classified grid in the format of a fuel map that is compatible with third-party apps such as FARSITE.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-lg-4 order-1 order-lg-2"  style="padding: 0 2%;">
                         <h4>Vegetation Classification</h4>
-                        <p>An automated classification tool was developed, which takes some user input in the form of the classification of the vegetation in one tile and uses the Euclidean distance between the average color of a classification and the average color of a given tile to predict the values for the vegetation classification in that tile.</p>
+                        <p>An automated classification tool was developed, which takes some user input in the form of the classification of the vegetation in one or more tiles and uses the Euclidean distance between the average colour of a classification and the average colour of a given tile to predict the values for the vegetation classification in that tile.</p>
                     </div>
 
                 </div>
@@ -138,13 +143,13 @@
                 <div class="row">
 
                     <div class="col-lg-8 order-2 order-lg- 1" style="padding: 0 3%">
-                        <img style="width: 100%" src="../assets/firelab/segmentation.png">
+                        <img style="width: 100%" src="../assets/firelab/segmentation.png" alt="FIRELab interface showing the completed segmentation process in regards to a area of interest and the resulting polygon to be stored in the server.">
                     </div>
 
                     <div class="col-lg-4 order-1 order-lg-2"  style="padding: 0 2%;">
                         <h4>Segmentation of areas of interest</h4>
-                        <p>The tools allow for extraction of frames related to areas of interest from either images or videos. The segmentation module employs an watershed algorithm which takes user clicks and drags as interactive inputs with each frame. The polygon represents the countour of the segmented area, and is only generated with user confirmation.</p>
-                        <p>Holes and gaps in the segmentation are ignored by appliing the morphological operations of dilation and erosion, in this order.</p>
+                        <p>The tool allows for extraction of frames related to areas of interest from either images or videos. The segmentation module employs a watershed algorithm which takes user clicks and drags as interactive inputs. The resulting polygon represents the contour of the segmented area and is only generated upon user confirmation.</p>
+                        <p>Holes and gaps in the segmentation are ignored by applying the morphological operations of dilation and erosion, in this order.</p>
                     </div>
 
                 </div>
@@ -157,24 +162,24 @@
                 <div class="row">
 
                     <div class="col-lg-4 order-3 order-lg-1" style="padding: 0 3% 5% 3%">
-                        <img style="width: 100%" src="../assets/firelab/georef.png">
+                        <img style="width: 100%" src="../assets/firelab/georef.png" alt="FIRELab interface showing the process of georeferencing.">
                     </div>
                     <div class="col-lg-4 col-6 order-4 order-lg-2" style="padding: 4% 3% 5% 3%">
-                        <img style="width: 100%" src="../assets/firelab/map.png">
+                        <img style="width: 100%" src="../assets/firelab/map.png" alt="Map showing the animation of the progression of fire boundaries.">
                     </div>
                     <div class="col-lg-4 col-6 order-5 order-lg-3" style="padding: 0 3% 5% 3%">
-                        <img style="width: 100%" src="../assets/firelab/FileDISPERFIRE.png">
+                        <img style="width: 100%" src="../assets/firelab/FileDISPERFIRE.png" alt="Extract of a DISPERFIRE readable file.">
                     </div>
                     <br>
 
                     <div class="col-lg-6 order-1 order-lg-4"  style="padding: 0 2%;">
-                        <h4>Georeferencing & Map Visuzalization </h4>
+                        <h4>Georeferencing & Map Visualisation </h4>
                         <p>Georeferencing works by selecting points on an image and assigning them a latitude and longitude. By finding the homograph of these points, we can obtain the pixel to geographic positions relation which is then used to enable the creation of a transformation matrix that will convert any point of that image into the corresponding latitude and longitude. Applying this transformation to the polygon obtained from segmentation will make it possible to show it on a map and overlap it on an area of interest.</p>
                     </div>
 
                     <div class="col-lg-6 order-2 order-lg-5"  style="padding: 0 2%;">
                         <p>FIRELab's web application is capable of generating animations containing the various polygons that map the fire evolution, hence the user will be able to easily evaluate and validate the data that FIRELab's software processed from raw, unprocessed imagery captured by the drones.</p>
-                        <p>This data can be exported in formats recognized by third-party applications such as DISPERFIRE, where the burning area and the time when each zone started burning is generated in the form of a matriz and can be exported automatically by the tool developed.</p>
+                        <p>This data can be exported in formats recognized by third-party applications such as DISPERFIRE, where the burning area and the time when each zone started burning is generated in the form of a matrix and can be exported automatically by the tool developed.</p>
                     </div>
 
                 </div>
@@ -192,15 +197,15 @@
                     </div>
 
                     <div class="col-lg-5"  style="padding: 0 2% 0 2%;">
-                        <p>Despite several obstacles along the development process, the team feels optimistic with the complete work completed and the expertise gained via the development of this project.</p>
+                        <p>Despite several obstacles along the development process, the team feels optimistic with the completed work and the expertise gained via the development of this project.</p>
                         <p>Of course the project is not without flaws and the team recognized the limitation of the work, analysing it and proposing a set of future work to be done, if the project and subsequent investigation is to be continued.</p>
                     </div>
 
 
                     <div class="col-lg-8"  style="padding: 0 2%;">
-                        <h4>In a more individual level...</h4>
-                        <p>The main knowledge gained from the project was honing the skills needed to develop a system in its entirety, from requirement gathering and theoretical analysis, to implementation and deployment, as well as the pipeline associated with this type of work in a bigger scale to what I normally used to.</p>
-                        <p>Additionally, the work was developed along side a bigger team that any of us were used to, and personally it helped my develop some soft skills in regards to communication and problem-solving as a team.</p>
+                        <h4>On a more individual level...</h4>
+                        <p>The main knowledge gained from the project was honing the skills needed to develop a system in its entirety, from requirement gathering and theoretical analysis to implementation and deployment, as well as the pipeline associated with this type of work in a bigger scale to what I was normally used to.</p>
+                        <p>Additionally, the work was developed alongside a bigger team than any of us ever worked with and, personally, it helped me develop some soft-skills in regard to communication and problem-solving as a team.</p>
                     </div>
 
                     <div class="col-lg-4 offset-lg-8" style="text-align: right; padding: 0 3%;">
