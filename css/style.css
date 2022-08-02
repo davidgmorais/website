@@ -111,3 +111,11 @@ li {
     color: var(--highligh);
 }
 
+.btn {
+    color: white;
+    border-color: var(--highligh);
+}
+
+.btn:hover {
+    background-color: var(--highligh);
+}

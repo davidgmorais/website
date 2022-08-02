@@ -10,7 +10,41 @@
 
 <body>
 
-    <div class="container" style="margin-top: 150px; margin-bottom: 150px;">
+    <div class="container" style="margin-top: 30vh; margin-bottom: 150px;">
+
+        <div class="col-lg-12">
+            <h3>Hi there, my name is</h3>
+            <h1>David Morais</h1>
+            <h2 style="font-size: 50px">and I write my silly little code on my silly little computer.</h2>
+            <br>
+        </div>
+
+        <div class="col-lg-6" style="margin-bottom: 30vh">
+            <h6 style="color: white">I'm a software engineer from Portugal currently doing a master’s degree in <span class="highlight">Cybersecurity</span> at University of Aveiro </h6>
+            <br>
+            <a href="DavidMorais_CV.pdf" target="_blank" class="btn btn-lg btn-outline-success">Download my resume</a>
+        </div>
+
+
+        <div class="row" style="margin: 20vh 0 30vh 0">
+            <div class="col-7" style="padding-top: 4%">
+                <h3 ><span class="highlight">self.</span>about_me</h3>
+                <br>
+
+                <p>Hi, my name is David and I'm a software engineer and Cybersecurity Student from Portugal. It all started when I accidentally fell in love with coding and all these years later, here I am - with a degree and working on my Masters.</p>
+                <p>I consider myself to be someone who is adaptable, hard-working and above all incredibly eager to learn. In my field, I have a bigger interest in authentication and data privacy as well as back-end development, but am no stranger to front-end development/frameworks when need be.</p>
+            </div>
+
+            <div class="col-5">
+                <img id="avatar" style="width: 50%; height: auto">
+            </div>
+
+        </div>
+
+
+
+
+
         <div class="col-lg-8 offset-lg-2 col-12">
             <h3 ><span class="highlight">self.</span>portfolio</h3>
             <br>
@@ -73,4 +107,22 @@
     </div>
 
 </body>
+
+<script >
+    let xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            let avatar = JSON.parse(this.responseText)["avatar_url"];
+            if (avatar !== undefined) {
+                document.getElementById("avatar").src = avatar;
+            }
+            /*document.getElementById("demo").innerHTML =
+                this.responseText;*/
+        }
+    };
+    xmlHttp.open("GET", "https://api.github.com/users/davidgmorais", true);
+    xmlHttp.send( null );
+</script>
+
+
 </html>
