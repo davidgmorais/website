@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js'></script>
+
 </head>
 
 <body>
@@ -98,6 +100,26 @@
                 </div>
             </div>
 
+
+            <br><br>
+            <div style="margin: 20vh 0 30vh 0">
+                <h3 style="text-align: center">Some other projects I developed</h3>
+                <p style="text-align: center">You can check them on my <a href="https://github.com/davidgmorais" style="text-decoration: none " class="highlight">github</a></p>
+                <br>
+                <div class="row" data-bind="foreach: myObservableArray">
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <a style="text-decoration: none" data-bind="attr: { href: html_url }" target="_blank">
+                                <h6 data-bind="text: name"></h6>
+                            </a>
+                            <p style="font-size: 14px; text-align: left; max-height: 100px; overflow: hidden; text-overflow: ellipsis" data-bind="text: description"></p>
+                            <br>
+                            <p style="margin-top: auto; font-size: 14px; opacity: .5" data-bind="text: lang"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
 
@@ -108,7 +130,10 @@
 
 </body>
 
-<script >
+<script>
+    let myObservableArray = ko.observableArray();
+
+
     let xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
@@ -120,8 +145,40 @@
                 this.responseText;*/
         }
     };
-    xmlHttp.open("GET", "https://api.github.com/users/davidgmorais", true);
+    xmlHttp.open("GET", "https://api.github.com/users/davidgmorais", false);
     xmlHttp.send( null );
+
+    xmlHttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+
+            let languagesXml = new XMLHttpRequest();
+            let repos = JSON.parse(this.responseText);
+            for (let i in repos) {
+                console.log(repos[i])
+                let obj = {name: repos[i]["name"], html_url: repos[i]["html_url"], description: repos[i]["description"]}
+
+                languagesXml.onreadystatechange = function() {
+                    if (this.readyState === 4 && this.status === 200) {
+                        let languages = JSON.parse(this.responseText);
+                        let langStr = "";
+                        for (let lang in languages) {
+                            langStr += lang + "; ";
+                        }
+                        obj['lang'] = langStr;
+                        myObservableArray.push(obj)
+                    }
+                };
+                languagesXml.open("GET", repos[i]["languages_url"], false);
+                languagesXml.send( null );
+
+            }
+
+        }
+    };
+    xmlHttp.open("GET", "https://api.github.com/users/davidgmorais/repos", false);
+    xmlHttp.send( null );
+    ko.applyBindings(myObservableArray);
+
 </script>
 
 
