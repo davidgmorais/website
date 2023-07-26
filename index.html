@@ -3,124 +3,460 @@
 <head>
     <meta charset="UTF-8">
     <title>David Morais</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jquery-3.7.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
     <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js'></script>
-
+    <script type="module" src="./js/app.js"></script>
 </head>
 
 <body>
 
-    <div class="container" style="margin-top: 30vh; margin-bottom: 150px;">
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+          <a id="navbar-brand" class="navbar-brand" href="/">DM</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarText">
+            <div class="navbar-nav ms-auto">
+                <span class="nav-link openning-tag">{</span>
+                <a id="anchor_about_me" class="nav-link" href="#about_me">about,</a>
+                <a id="anchor_history" class="nav-link" href="#history">history,</a>
+                <a id="anchor_projects" class="nav-link" href="#projects">projects,</a>
+                <a id="anchor_contacts" class="nav-link" href="#contacts">contacts</a>
+                <span class="nav-link closing-tag">}</span>
+            </div>
+          </div>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 23vh; margin-bottom: 150px;">
 
         <div class="col-lg-12">
-            <h3>Hi there, my name is</h3>
-            <h1>David Morais</h1>
-            <h2 style="font-size: 50px">and I write my silly little code on my silly little computer.</h2>
+            <h3 class="sensitive" style="margin-bottom: -20px;">Hi there, my name is</h3>
+            <h1 class="sensitive">David Morais</h1>
+            <h2 class="sensitive" style="font-size: 43px">and I write my silly little code on my silly little computer.</h2>
             <br>
         </div>
 
-        <div class="col-lg-6" style="margin-bottom: 30vh">
-            <h6 style="color: white">I'm a software engineer from Portugal currently doing a master’s degree in <span class="highlight">Cybersecurity</span> at University of Aveiro </h6>
+        <div class="col-lg-5" style="margin-bottom: 30vh;">
+            <h6 class="sensitive" style="color: white">I'm a software engineer from Portugal with a master's degree in Cybersecurity.</h6>
             <br>
-            <a href="DavidMorais_CV.pdf" target="_blank" class="btn btn-lg btn-outline-success">Download my resume</a>
+            <a href="DavidMorais_CV.pdf" target="_blank" class="btn btn-lg btn-outline-info">Download my resume</a>
         </div>
 
 
-        <div class="row" style="margin: 20vh 0 30vh 0">
-            <div class="col-7" style="padding-top: 4%">
-                <h3 ><span class="highlight">self.</span>about_me</h3>
-                <br>
+        <section id="about_me" class="row" style="margin: 10vh 0 20vh 0">
+            <div class="col-lg-7 col-12" style="padding-top: 4%; margin-top: 10vh">
+                <h3><span class="highlight">self.</span>about_me</h3>
 
-                <p>Hi, my name is David and I'm a software engineer and Cybersecurity Student from Portugal. It all started when I accidentally fell in love with coding and all these years later, here I am - with a degree and working on my Masters.</p>
-                <p>I consider myself to be someone who is adaptable, hard-working and above all incredibly eager to learn. In my field, I have a bigger interest in authentication and data privacy as well as back-end development, but am no stranger to front-end development/frameworks when need be.</p>
+                <p>A cinema expert <span class="highlight">(accourding to absolutly no one but me)</span> and with a growing collection of books that I keep accidentaly hoarding, I am known for my sense of humor <span class="highlight">(or so my best friend tells me)</span>.</p>
+                <p>It all started when I accidentally fell in love with coding and all these years later, here we are. I consider myself to be someone who is adaptable, hard-working and above all incredibly eager to learn. In my field, I have a bigger interest in authentication and data privacy as well as back-end development.</p>
             </div>
 
-            <div class="col-5">
-                <img id="avatar" style="width: 50%; height: auto">
-            </div>
+            <div class="col-lg-5 col-12" style="margin-top: 10vh">
+                <div style="padding-left: 5vw; width: 100%; height: auto">  <!-- margin left style only for lg display -->
+                    <h3 ><span class="highlight">self.</span>skills</h3>
+                    
+                    <div class="row skill" style="width: 100%;">                    
+                        <div class="skill-item"><p>Python</p></div>
+                        <div class="skill-item"><p>Java</p></div>
+                        <div class="skill-item"><p>Javascript</p></div>
+                        <div class="skill-item"><p>C/C#</p></div>
+                        <div class="skill-item"><p>Linux</p></div>
+                        <div class="skill-item"><p>Docker</p></div>
+                        <div class="skill-item"><p>Git</p></div>    
+                        <div class="skill-item"><p>HTML/CSS</p></div>                 
+                    </div>
+                    <br>
 
-        </div>
-
-
-
-
-
-        <div class="col-lg-8 offset-lg-2 col-12">
-            <h3 ><span class="highlight">self.</span>portfolio</h3>
-            <br>
-
-            <div class="row">
-                <div class="col-lg-5" style="margin: auto">
-                    <a href="portfolio/firelab.html"><img class="project-header-link" style="width: 100%" src="./assets/firelab/header.png" alt="Print-screen of FIRELab's main page."></a>
-                </div>
-
-                <div class="col-lg-7" style="text-align: right">
-                    <a style="text-decoration: none" href="portfolio/firelab.html"><h4>FIRELab</h4></a>
-                    <h6>Wildfire Imagery Analysis & Processing</h6>
-
-                    <p style="text-align: right">From vegetation characterization to fire segmentation and progression, and much more, FIRELab helps environmental researchers, data scientists and engineers streamline their work.</p>
-                    <p style="text-align: right; font-size: 16px; opacity: .5">HTML + CSS; Javascript; Python; Django; PostgreSQL + PostGIS.</p>
-                    <a class="project_link" href="https://github.com/itskikat/firelab">project.source_code</a>
-                </div>
-            </div>
-
-            <br><br><br>
-
-            <div class="row">
-                <div class="col-lg-5 order-1 order-lg-2" style="margin: auto">
-                    <a href="portfolio/mais.html"><img class="project-header-link" style="width: 100%" src="./assets/mais/header.png" alt="Print-screen of MAIS' main page."></a>
-                </div>
-
-                <div class="col-lg-7 order-2 order-lg-1" style="text-align: left">
-                    <a style="text-decoration: none" href="portfolio/mais.html"><h4>MAIS</h4></a>
-                    <h6>Multimodal Authentication Integration System</h6>
-
-                    <p style="text-align: left">User friendly biometric system used for authentication that runs locally.</p>
-                    <p style="text-align: left; font-size: 16px; opacity: .5">Python; OpenCV; PyAudio; MySQL.</p>
-                    <a class="project_link" href="https://github.com/davidgmorais/mais">project.source_code</a>
+                    <p>Cybersecurity focused</p>
+                    <div class="row skill" style="width: 100%;">                    
+                        <div class="skill-item"><p>Pen Testing</p></div>
+                        <div class="skill-item"><p>Authentication</p></div>
+                        <div class="skill-item"><p>Privacy</p></div>
+                        <div class="skill-item"><p>Secure Coding</p></div>
+                        <div class="skill-item"><p>Audits</p></div>
+                    </div>
+                    
                 </div>
             </div>
 
-            <br><br><br>
+        </section>
 
-            <div class="row">
-                <div class="col-lg-5" style="margin: auto">
-                    <a href="portfolio/verifiableElection.html"><img class="project-header-link" style="width: 100%" src="./assets/verifiableElection/header.png" alt="Print-screen of the terminal from the verifiable election."></a>
-                </div>
 
-                <div class="col-lg-7" style="text-align: right">
-                    <a style="text-decoration: none" href="portfolio/verifiableElection.html"><h4>Verifiable Election</h4></a>
-                    <h6>Using SGX Enclaves</h6>
+        <section id="history" class="col-lg-12" style="min-height: 100vh; margin-bottom: 20vh; padding-top: 10vh">
+            <h3 ><span class="highlight">self.</span>history</h3>
 
-                    <p style="text-align: right">Exploration of secure environments and sealing of data for the execution of trusted actions.</p>
-                    <p style="text-align: right; font-size: 16px; opacity: .5">C++; Intel SGX Enclaves; OpenSSL Crypto; Python.</p>
-                    <a class="project_link" href="https://github.com/davidgmorais/verifiable-election">project.source_code</a>
-                </div>
+            <div class="col-12 col-lg-5 history-end">
+                <div></div>
             </div>
 
+            <div class="col-12 col-lg-5 history-item first">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" class="history-item-icon">
+                    <defs>
+                        <g id="history-icon">
+                         <path id="bg" fill="#1C274C" d="m6.40064,17.59938c3.09244,3.0924 8.10625,3.0924 11.19874,0c3.0924,-3.09248 3.0924,-8.10629 0,-11.19874c-3.09248,-3.09244 -8.10629,-3.09244 -11.19874,0c-3.09244,3.09244 -3.09244,8.10625 0,11.19874z" opacity="1"/>
+                         <path id="icon_1" fill="#1C274C" d="m17.1265,6.87349c-0.2929,-0.29289 -0.7677,-0.29289 -1.0606,0c-0.2929,0.29289 -0.2929,0.76777 0,1.06066c2.2455,2.24555 2.2455,5.88625 0,8.13175c-0.2929,0.2929 -0.2929,0.7677 0,1.0606c0.2929,0.2929 0.7677,0.2929 1.0606,0c2.8313,-2.8313 2.8313,-7.42171 0,-10.25301z"/>
+                         <path id="icon_2" fill="#1C274C" d="m7.93414,7.93415c0.29289,-0.29289 0.29289,-0.76777 0,-1.06066c-0.2929,-0.29289 -0.76777,-0.29289 -1.06066,0c-2.83131,2.8313 -2.83131,7.42171 0,10.25301c0.29289,0.2929 0.76776,0.2929 1.06066,0c0.29289,-0.2929 0.29289,-0.7677 0,-1.0606c-2.24552,-2.2455 -2.24552,-5.8862 0,-8.13175z"/>
+                         <path id="icon_3" fill="#1C274C" d="m9.34835,9.34835c1.46445,-1.46446 3.83885,-1.46446 5.30335,0c1.4644,1.46444 1.4644,3.83884 0,5.30334c-1.4645,1.4644 -3.8389,1.4644 -5.30335,0c-1.46447,-1.4645 -1.46447,-3.8389 0,-5.30334zm1.06065,1.06064c0.8787,-0.87866 2.3033,-0.87866 3.182,0c0.8787,0.8787 0.8787,2.3033 0,3.182c-0.8787,0.8787 -2.3033,0.8787 -3.182,0c-0.87867,-0.8787 -0.87867,-2.3033 0,-3.182z" clip-rule="evenodd" fill-rule="evenodd"/>
+                        </g>
+                    </defs>
+                    <use xlink:href="#history-icon"/>
+                </svg>
 
-            <br><br>
-            <div style="margin: 20vh 0 30vh 0">
-                <h3 style="text-align: center">Some other projects I developed</h3>
-                <p style="text-align: center">You can check them on my <a href="https://github.com/davidgmorais" style="text-decoration: none " class="highlight">github</a></p>
-                <br>
-                <div class="row" data-bind="foreach: myObservableArray">
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <a style="text-decoration: none" data-bind="attr: { href: html_url }" target="_blank">
-                                <h6 data-bind="text: name"></h6>
-                            </a>
-                            <p style="font-size: 14px; text-align: left; max-height: 100px; overflow: hidden; text-overflow: ellipsis" data-bind="text: description"></p>
-                            <br>
-                            <p style="margin-top: auto; font-size: 14px; opacity: .5" data-bind="text: lang"></p>
-                        </div>
+                <div class="history-details slide-in-bottom">
+                    <h5>Present Day.</h5>
+                    <div class="job">
+                        <p class="job-title">Security Trainee</p>
+                        <p class="job-details">WIT Software (2022 - Present)</p>
+                    </div>
+
+                    <div class="job">
+                        <p class="job-title">Master's in Cybersecurity</p>
+                        <p class="job-details">University of Aveiro (2021 - Present)</p>
+                        <p class="job-details">Thesis on Adaptable Multi-factor Auhtentication for Web Applications.</p>
                     </div>
                 </div>
             </div>
 
-        </div>
+
+            <div class="col-12 col-lg-5 history-item">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" class="history-item-icon">
+                    <defs>
+                        <g id="history-icon">
+                         <path id="bg" fill="#1C274C" d="m6.40064,17.59938c3.09244,3.0924 8.10625,3.0924 11.19874,0c3.0924,-3.09248 3.0924,-8.10629 0,-11.19874c-3.09248,-3.09244 -8.10629,-3.09244 -11.19874,0c-3.09244,3.09244 -3.09244,8.10625 0,11.19874z" opacity="1"/>
+                         <path id="icon_1" fill="#1C274C" d="m17.1265,6.87349c-0.2929,-0.29289 -0.7677,-0.29289 -1.0606,0c-0.2929,0.29289 -0.2929,0.76777 0,1.06066c2.2455,2.24555 2.2455,5.88625 0,8.13175c-0.2929,0.2929 -0.2929,0.7677 0,1.0606c0.2929,0.2929 0.7677,0.2929 1.0606,0c2.8313,-2.8313 2.8313,-7.42171 0,-10.25301z"/>
+                         <path id="icon_2" fill="#1C274C" d="m7.93414,7.93415c0.29289,-0.29289 0.29289,-0.76777 0,-1.06066c-0.2929,-0.29289 -0.76777,-0.29289 -1.06066,0c-2.83131,2.8313 -2.83131,7.42171 0,10.25301c0.29289,0.2929 0.76776,0.2929 1.06066,0c0.29289,-0.2929 0.29289,-0.7677 0,-1.0606c-2.24552,-2.2455 -2.24552,-5.8862 0,-8.13175z"/>
+                         <path id="icon_3" fill="#1C274C" d="m9.34835,9.34835c1.46445,-1.46446 3.83885,-1.46446 5.30335,0c1.4644,1.46444 1.4644,3.83884 0,5.30334c-1.4645,1.4644 -3.8389,1.4644 -5.30335,0c-1.46447,-1.4645 -1.46447,-3.8389 0,-5.30334zm1.06065,1.06064c0.8787,-0.87866 2.3033,-0.87866 3.182,0c0.8787,0.8787 0.8787,2.3033 0,3.182c-0.8787,0.8787 -2.3033,0.8787 -3.182,0c-0.87867,-0.8787 -0.87867,-2.3033 0,-3.182z" clip-rule="evenodd" fill-rule="evenodd"/>
+                        </g>
+                    </defs>
+                    <use xlink:href="#history-icon"/>
+                </svg>
+
+                <div class="history-details slide-in-bottom">
+                    <h5>Not so long ago.</h5>
+                    <div class="job">
+                        <p class="job-title">Degree in Informatics Engineering</p>
+                        <p class="job-details">University of Aveiro (2018 - 2021)</p>
+                        <p class="job-details">Final projcet on Wildfire Imagery Analysis & Processing, which granted a research scholarship.</p>
+                    </div>
+
+                    <div class="job">
+                        <p class="job-title">Research Initiation Scholarship</p>
+                        <p class="job-details">IEETA, Aveiro (2021)</p>
+                        <p class="job-details">Researcher & Developer on the processing and analysis techniques of spatio-temporal data.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6 history-item">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" class="history-item-icon">
+                    <defs>
+                        <g id="history-icon">
+                         <path id="bg" fill="#1C274C" d="m6.40064,17.59938c3.09244,3.0924 8.10625,3.0924 11.19874,0c3.0924,-3.09248 3.0924,-8.10629 0,-11.19874c-3.09248,-3.09244 -8.10629,-3.09244 -11.19874,0c-3.09244,3.09244 -3.09244,8.10625 0,11.19874z" opacity="1"/>
+                         <path id="icon_1" fill="#1C274C" d="m17.1265,6.87349c-0.2929,-0.29289 -0.7677,-0.29289 -1.0606,0c-0.2929,0.29289 -0.2929,0.76777 0,1.06066c2.2455,2.24555 2.2455,5.88625 0,8.13175c-0.2929,0.2929 -0.2929,0.7677 0,1.0606c0.2929,0.2929 0.7677,0.2929 1.0606,0c2.8313,-2.8313 2.8313,-7.42171 0,-10.25301z"/>
+                         <path id="icon_2" fill="#1C274C" d="m7.93414,7.93415c0.29289,-0.29289 0.29289,-0.76777 0,-1.06066c-0.2929,-0.29289 -0.76777,-0.29289 -1.06066,0c-2.83131,2.8313 -2.83131,7.42171 0,10.25301c0.29289,0.2929 0.76776,0.2929 1.06066,0c0.29289,-0.2929 0.29289,-0.7677 0,-1.0606c-2.24552,-2.2455 -2.24552,-5.8862 0,-8.13175z"/>
+                         <path id="icon_3" fill="#1C274C" d="m9.34835,9.34835c1.46445,-1.46446 3.83885,-1.46446 5.30335,0c1.4644,1.46444 1.4644,3.83884 0,5.30334c-1.4645,1.4644 -3.8389,1.4644 -5.30335,0c-1.46447,-1.4645 -1.46447,-3.8389 0,-5.30334zm1.06065,1.06064c0.8787,-0.87866 2.3033,-0.87866 3.182,0c0.8787,0.8787 0.8787,2.3033 0,3.182c-0.8787,0.8787 -2.3033,0.8787 -3.182,0c-0.87867,-0.8787 -0.87867,-2.3033 0,-3.182z" clip-rule="evenodd" fill-rule="evenodd"/>
+                        </g>
+                    </defs>
+                    <use xlink:href="#history-icon"/>
+                </svg>
+
+                <div class="history-details slide-in-bottom">
+                    <h5>Back to basics.<h5>
+                    <div class="job">
+                        <p class="job-title">Science and Technologies</p>
+                        <p class="job-details">Alves Martins Secondary School, Viseu (2015 - 2018)</p>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <div class="col-12 col-lg-5 history-item">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" class="history-item-icon">
+                    <defs>
+                        <g id="history-icon">
+                         <path id="bg" fill="#1C274C" d="m6.40064,17.59938c3.09244,3.0924 8.10625,3.0924 11.19874,0c3.0924,-3.09248 3.0924,-8.10629 0,-11.19874c-3.09248,-3.09244 -8.10629,-3.09244 -11.19874,0c-3.09244,3.09244 -3.09244,8.10625 0,11.19874z" opacity="1"/>
+                         <path id="icon_1" fill="#1C274C" d="m17.1265,6.87349c-0.2929,-0.29289 -0.7677,-0.29289 -1.0606,0c-0.2929,0.29289 -0.2929,0.76777 0,1.06066c2.2455,2.24555 2.2455,5.88625 0,8.13175c-0.2929,0.2929 -0.2929,0.7677 0,1.0606c0.2929,0.2929 0.7677,0.2929 1.0606,0c2.8313,-2.8313 2.8313,-7.42171 0,-10.25301z"/>
+                         <path id="icon_2" fill="#1C274C" d="m7.93414,7.93415c0.29289,-0.29289 0.29289,-0.76777 0,-1.06066c-0.2929,-0.29289 -0.76777,-0.29289 -1.06066,0c-2.83131,2.8313 -2.83131,7.42171 0,10.25301c0.29289,0.2929 0.76776,0.2929 1.06066,0c0.29289,-0.2929 0.29289,-0.7677 0,-1.0606c-2.24552,-2.2455 -2.24552,-5.8862 0,-8.13175z"/>
+                         <path id="icon_3" fill="#1C274C" d="m9.34835,9.34835c1.46445,-1.46446 3.83885,-1.46446 5.30335,0c1.4644,1.46444 1.4644,3.83884 0,5.30334c-1.4645,1.4644 -3.8389,1.4644 -5.30335,0c-1.46447,-1.4645 -1.46447,-3.8389 0,-5.30334zm1.06065,1.06064c0.8787,-0.87866 2.3033,-0.87866 3.182,0c0.8787,0.8787 0.8787,2.3033 0,3.182c-0.8787,0.8787 -2.3033,0.8787 -3.182,0c-0.87867,-0.8787 -0.87867,-2.3033 0,-3.182z" clip-rule="evenodd" fill-rule="evenodd"/>
+                        </g>
+                    </defs>
+                    <use xlink:href="#history-icon"/>
+                </svg>
+
+                <div class="history-details slide-in-bottom">
+                    <h5>The dark ages.<h5>
+                    <div class="job">
+                        <p class="job-title">No one knows what really happened here</p>
+                        <p class="job-details">Just enought to build character.</p>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <div class="col-12 history-begin">
+                <div></div>
+            </div>
+
+        </section>
+
+
+        <section id="projects" class="col-lg-8 offset-lg-2 col-12" style="padding-top: 10vh;">
+            <h3 ><span class="highlight">self.</span>projects</h3>
+
+            <button class="project-card" onclick="window.location='/portfolio/firelab.html'">
+                <div class="row">
+                    <div class="col-10 col-lg-4 m-auto">
+                        <img class="project-card-thumbnail" src="./assets/firelab/header.png" alt="Print-screen of FIRELab's main page.">
+                    </div>
+
+                    <div class="col-lg-8 project-card-body">
+                        <h6 class="project-card-title">FIRELab</h6>
+                        <p class="project-card-description">From vegetation characterization to fire segmentation and progression, and much more, FIRELab helps environmental researchers, data scientists and engineers streamline their work through a web application.</p>
+                        <a class="project-card-external-resource" href="https://github.com/itskikat/firelab">project.source_code 
+                            <i class="project-card-external-resource-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                            </svg></i>
+                        </a>
+                        <div class="row project-card-tech-stack">                    
+                            <div class="project-card-tech-item"><p>Django</p></div>
+                            <div class="project-card-tech-item"><p>PostgreSQL</p></div>
+                            <div class="project-card-tech-item"><p>Thymeleaf</p></div>
+                            <div class="project-card-tech-item"><p>Docker</p></div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <button class="project-card" onclick="window.location='/portfolio/mais.html'">
+                <div class="row">
+                    <div class="col-10 col-lg-4 m-auto">
+                        <img class="project-card-thumbnail" src="./assets/mais/header.png" alt="Print-screen of MAIS' main page.">
+                    </div>
+
+                    <div class="col-lg-8 project-card-body">
+                        <h6 class="project-card-title">MAIS</h6>
+                        <p class="project-card-description">MAIS stands for Multimodal Authentication Integration System. It is a user friendly biometric system used for supervised authentication that runs locally.</p>
+                        <a class="project-card-external-resource" href="https://github.com/davidgmorais/mais">project.source_code 
+                            <i class="project-card-external-resource-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                            </svg></i>
+                        </a>
+                        <div class="row project-card-tech-stack">                    
+                            <div class="project-card-tech-item"><p>Python</p></div>
+                            <div class="project-card-tech-item"><p>OpenCV</p></div>
+                            <div class="project-card-tech-item"><p>PyAudio</p></div>
+                            <div class="project-card-tech-item"><p>MySQL</p></div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <button class="project-card" onclick="window.location='/portfolio/verifiableElection.html'">
+                <div class="row">
+                    <div class="col-10 col-lg-4 m-auto">
+                        <img class="project-card-thumbnail" src="./assets/verifiableElection/header.png" alt="Print-screen of the terminal from the verifiable election.">
+                    </div>
+
+                    <div class="col-lg-8 project-card-body">
+                        <h6 class="project-card-title">Verifiable Election</h6>
+                        <p class="project-card-description">Exploration of secure environments and sealing of data for the execution of trusted actions using SGX Enclaves.</p>
+                        <a class="project-card-external-resource" href="https://github.com/davidgmorais/verifiable-election">project.source_code 
+                            <i class="project-card-external-resource-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                            </svg></i>
+                        </a>
+                        <div class="row project-card-tech-stack">                    
+                            <div class="project-card-tech-item"><p>C++</p></div>
+                            <div class="project-card-tech-item"><p>Intel SGX Enclaves</p></div>
+                            <div class="project-card-tech-item"><p>OpenSSL Crypto</p></div>
+                            <div class="project-card-tech-item"><p>Python</p></div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+        
+            <div class="col-12 other-projects">
+                <div class="row">
+
+                    <div class="col-12 col-xl-6 col-xxl-5 other-projects-header">
+                        <h6 class="text-align: right">Some other random projects</h6>
+                        <p style="text-align: right">Mainly student projects, but I'm going to milk those 5 years of University tuitons.</p>
+        
+                    </div>
+
+                    <div class="col-12 offset-xl-2 col-xl-10 other-projects-body">
+                        <table class="table table-sm other-projects-table" aria-describedby="other-projects">
+                            <thead>
+                              <tr>
+                                <th scope="col" id="year-col">_Year</th>
+                                <th scope="col" id="name-col" >_Project</th>
+                                <th scope="col" id="tech-col" >_Technologies</th>
+                                <th scope="col" id="link-col" >_Resources</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">2022</th>
+                                <td><span>Hypervisor detection</span></td>
+                                <td><div class="row other-projects-tech-stack">                    
+                                    <div class="other-projects-tech-item"><span>C</span></div>
+                                    <div class="other-projects-tech-item"><span>Makefile</span></div>
+                                </div></td>
+                                <th scope="row">
+                                    <a class="other-projects-table-resource" href="https://github.com/davidgmorais/hypervisor-detection">Source code 
+                                        <i class="other-projects-table-resource-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></i>
+                                    </a><br>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">2022</th>
+                                <td><span>Vulnerable app mitigations</span></td>
+                                <td><div class="row other-projects-tech-stack">                    
+                                    <div class="other-projects-tech-item"><span>Flask</span></div>
+                                    <div class="other-projects-tech-item"><span>Docker</span></div>
+                                    <div class="other-projects-tech-item"><span>SQL</span></div>
+                                    <div class="other-projects-tech-item"><span>HTML</span></div>
+                                </div></td>
+                                <th scope="row">
+                                    <a class="other-projects-table-resource" href="https://github.com/davidgmorais/Assignment1-VulnerableApp">Source code 
+                                        <i class="other-projects-table-resource-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></i>
+                                    </a><br>
+                                </td>
+                              </tr>
+                              
+                              
+                              <tr>
+                                <th scope="row">2021</th>
+                                <td><span>SPTData processing</span></td>
+                                <td><div class="row other-projects-tech-stack">                    
+                                    <div class="other-projects-tech-item"><span>Python</span></div>
+                                    <div class="other-projects-tech-item"><span>OpenCV</span></div>
+                                    <div class="other-projects-tech-item"><span>R&D</span></div>
+                                </div></td>
+                                <th scope="row">
+                                    <a class="other-projects-table-resource" href="https://github.com/davidgmorais/most_SPTData">Source code 
+                                        <i class="other-projects-table-resource-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></i>
+                                    </a><br>
+                                </td>
+                              </tr>
+                              
+                              <tr>
+                                <th scope="row">2021</th>
+                                <td><span>Shuffled version of AES</span></td>
+                                <td><div class="row other-projects-tech-stack">                    
+                                    <div class="other-projects-tech-item"><span>C</span></div>
+                                </div></td>
+                                <th scope="row">
+                                    <a class="other-projects-table-resource" href="https://github.com/davidgmorais/Shuffle-AES">Source code 
+                                        <i class="other-projects-table-resource-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></i>
+                                    </a><br>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">2021</th>
+                                <td><span>Danceteria MammaMia: Landing Page</span></td>
+                                <td><div class="row other-projects-tech-stack">                    
+                                    <div class="other-projects-tech-item"><span>Angular</span></div>
+                                    <div class="other-projects-tech-item"><span>TypeScript</span></div>
+                                    <div class="other-projects-tech-item"><span>HTML</span></div>
+                                    <div class="other-projects-tech-item"><span>CSS</span></div>
+                                </div></td>
+                                <th scope="row">
+                                   
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">2021</th>
+                                <td><span>Book2Door: Book courier service</span></td>
+                                <td><div class="row other-projects-tech-stack">                    
+                                    <div class="other-projects-tech-item"><span>Spring Boot</span></div>
+                                    <div class="other-projects-tech-item"><span>Thymeleaf</span></div>
+                                    <div class="other-projects-tech-item"><span>MySQL</span></div>
+                                    <div class="other-projects-tech-item"><span>Docker</span></div>
+                                    <div class="other-projects-tech-item"><span>SonarQube</span></div>
+                                </div></td>
+                                <th scope="row">
+                                    <a class="other-projects-table-resource" href="https://github.com/davidgmorais/TQSProject">Source code 
+                                        <i class="other-projects-table-resource-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></i>
+                                    </a><br>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">2020</th>
+                                <td><span>Air quality web application</span></td>
+                                <td><div class="row other-projects-tech-stack">                    
+                                    <div class="other-projects-tech-item"><span>Spring Boot</span></div>
+                                    <div class="other-projects-tech-item"><span>Thymeleaf</span></div>
+                                </div></td>
+                                <th scope="row">
+                                    <a class="other-projects-table-resource" href="https://github.com/davidgmorais/air-quality">Source code 
+                                        <i class="other-projects-table-resource-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></i>
+                                    </a><br>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">2020</th>
+                                <td><span>CineTicket</span></td>
+                                <td><div class="row other-projects-tech-stack">                    
+                                    <div class="other-projects-tech-item"><span>Flutter</span></div>
+                                    <div class="other-projects-tech-item"><span>Dart</span></div>
+                                </div></td>
+                                <th scope="row">
+                                    <a class="other-projects-table-resource" href="https://github.com/davidgmorais/cineTicket">Source code 
+                                        <i class="other-projects-table-resource-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></i>
+                                    </a><br>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <section id="contacts" class="row" style="margin: 0 0 5vh 0">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1>Say it to my face...</h1>
+                    <h3 style="margin-top: 20px;">You can reach me any time, even if it's just to suggest some movies <span class="highlight">(I will be juding)</span>.</h3>
+                </div>
+
+                <div class="col-lg-5 offset-lg-1" style="margin-top: 5%;">
+                    <h4 style="color: white;">Come on, don't be shy.</h4>
+                    <a href="mailto:david_morais35@live.com.pt" class="btn btn-lg btn-outline-info">Contact me</a>
+
+                    <div class="row contacts-links">
+                        <a href="https://github.com/davidgmorais" title="Check my github" class="contact">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                        </a>
+                        <a href="#contacts" title="Ain't nobody need to see that." class="contact">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg>
+                        </a>
+                        <a href="#contacts" title="I'm pretty sure this is going to die soon, so I'm not going to bother." class="contact">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16"><path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/></svg>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
 
 
 
@@ -129,57 +465,5 @@
     </div>
 
 </body>
-
-<script>
-    let myObservableArray = ko.observableArray();
-
-
-    let xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-            let avatar = JSON.parse(this.responseText)["avatar_url"];
-            if (avatar !== undefined) {
-                document.getElementById("avatar").src = avatar;
-            }
-            /*document.getElementById("demo").innerHTML =
-                this.responseText;*/
-        }
-    };
-    xmlHttp.open("GET", "https://api.github.com/users/davidgmorais", false);
-    xmlHttp.send( null );
-
-    xmlHttp.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-
-            let languagesXml = new XMLHttpRequest();
-            let repos = JSON.parse(this.responseText);
-            for (let i in repos) {
-                console.log(repos[i])
-                let obj = {name: repos[i]["name"], html_url: repos[i]["html_url"], description: repos[i]["description"]}
-
-                languagesXml.onreadystatechange = function() {
-                    if (this.readyState === 4 && this.status === 200) {
-                        let languages = JSON.parse(this.responseText);
-                        let langStr = "";
-                        for (let lang in languages) {
-                            langStr += lang + "; ";
-                        }
-                        obj['lang'] = langStr;
-                        myObservableArray.push(obj)
-                    }
-                };
-                languagesXml.open("GET", repos[i]["languages_url"], false);
-                languagesXml.send( null );
-
-            }
-
-        }
-    };
-    xmlHttp.open("GET", "https://api.github.com/users/davidgmorais/repos", false);
-    xmlHttp.send( null );
-    ko.applyBindings(myObservableArray);
-
-</script>
-
 
 </html>

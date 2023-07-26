@@ -5,40 +5,44 @@
         <title>FIRELab project</title>
         <link rel="stylesheet" href="../css/bootstrap.css">
         <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="./portfolio.css">
         <script src="../js/bootstrap.min.js"></script>
-        <style>
-
-            #header {
-                padding-top: 160px;
-            }
-
-            @media (min-width: 1080px) {
-                #header {
-                    background-image: url("../assets/firelab/header.png");
-                    background-position-x: right;
-                    background-position-y: bottom;
-                    background-origin: content-box;
-                    background-size: auto 115%;
-                    background-repeat: no-repeat;
-                }
-            }
-
-
-        </style>
+        <script src="../js/jquery-3.7.0.min.js"></script>
     </head>
 
-    <body>
+    <body id="firelab">
 
+        <nav class="navbar sticky-top">
+            <div class="container-fluid">
+              <a id="navbar-brand" class="navbar-brand" href="/">DM</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              
+              <div class="collapse navbar-collapse" id="navbarText">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link openning-tag">{</a>
+                    <a id="anchor_about_me" class="nav-link" href="/#about_me">about,</a>
+                    <a id="anchor_history" class="nav-link" href="/#history">history,</a>
+                    <a id="anchor_projects" class="nav-link" href="/#projects">projects,</a>
+                    <a id="anchor_contacts" class="nav-link" href="/#contacts">contacts</a>
+                    <a class="nav-link closing-tag">}</a>
+                </div>
+              </div>
+            </div>
+        </nav>
+        
         <section class="project_header">
-            <div id="header" class="container-fluid">
+            <div class="container-fluid header">
                 <h1>FIRELab</h1>
                 <h2>Wildfire Imagery Analysis & Processing</h2>
-
+                
                 <div class="project_header_info">
                     <h3>_Year = 2021</h3>
                     <h3>_Context = Informatics Degree Final Project</h3>
                     <h3>_Project-type = Group</h3>
                 </div>
+                <img class="thumbnail" alt="FIRELab project thumbnail" src="../assets/firelab/header.png" />
             </div>
         </section>
 
@@ -47,30 +51,68 @@
             <div class="container-fluid">
                 <div class="row">
 
-                    <div class="col-lg-5 order-2 order-lg-1" style="margin-top:20px">
+                    <div class="col-lg-6 order-1 main-statement-title">
                         <h4 style="color: white">From vegetation characterization to fire segmentation and progression, and much more, FIRELab helps environmental researchers, data scientists and engineers streamline their work.</h4>
                     </div>
 
-                    <div class="col-lg-5 order-3 order-lg-2" style="margin-top: 70px; padding: 0 5%">
+                    <div class="col-lg-6 order-2 main-statement" style="padding: 0 5%">
                         <h6>All this in a responsive, easy-to-use, all-in-one platform.</h6>
-                        <p>The goal of the project was to develop a set of tools as well as implement and adapt already developed ones and aggregate them in a ready-to-use web application of processing, support, analysis and visualisation of data such as forest fire propagation and gas emission to the atmosphere.</p>
+                        <p style="margin-bottom: 0;">The goal of the project was to develop a set of tools as well as implement and adapt already developed ones and aggregate them in a ready-to-use web application of processing, support, analysis and visualisation of data such as forest fire propagation and gas emission to the atmosphere.</p>
                     </div>
 
-                    <div class="col-lg-2 order-1 order-lg-3">
-                        <h5>_Source.code</h5>
-                        <a href="https://github.com/itskikat/firelab"><p>github.com/itskikat/firelab</p></a>
+                    <div class="col-12 order-3 summary">
 
-                        <h5>_Tools</h5>
-                        <ul>
-                            <li>HTML + CSS + SCSS</li>
-                            <li>Javascript</li>
-                            <li>Python</li>
-                            <li>Django</li>
-                            <li>PostgreSQL + PostGIS</li>
-                        </ul>
+                        <div class="row">
+                            <div class="col-lg-5 justify-vertical-center">
+                                <div class="summay-item">
+                                    <h5>_Role</h5>
+                                    <p>Backend developer</p>
+                                    <p>DevOps</p>
+                                </div>
 
-                        <h5>_Deploy</h5>
-                        <p style="text-align: left">Docker and Microsoft Azure (temporarily)</p>
+                                <div class="summay-item">
+                                    <h5>_Organzation</h5>
+                                    <p>University of Aveiro</p>
+                                </div>
+                                
+                                <div class="summay-item">
+                                    <h5>_Year</h5>
+                                    <p>2021</p></a>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="col-lg-7 justify-vertical-center">
+                                <div class="summay-item">
+                                    <h5>_Source.code</h5>
+                                    <a href="https://github.com/itskikat/firelab"><p>github.com/itskikat/firelab</p></a>
+                                </div>
+                                
+                                <div class="summay-item row">
+                                    <h5>_Tools</h5>
+                                    <div class="summary-tools-item"><p>Django</p></div>
+                                    <div class="summary-tools-item"><p>OpenCV</p></div>
+                                    <div class="summary-tools-item"><p>PostgreSQL</p></div>
+                                    <div class="summary-tools-item"><p>PostGIS</p></div>
+                                    <div class="summary-tools-item"><p>Thymeleaf</p></div>
+                                    <div class="summary-tools-item"><p>Leaflet</p></div>
+                                    <div class="summary-tools-item"><p>Docker</p></div>
+                                </div>
+                                
+                                <div class="summay-item">
+                                    <h5>_Keywords</h5>
+                                    <p>Image processing, Spatiotemporal data, Machine learning, Web application</p>
+                                </div>
+
+                                <div class="summay-item">
+                                    <h5>_Deploy</h5>
+                                    <p style="text-align: left">Docker and Microsoft Azure (temporarily)</p>
+                                </div>
+                                    
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -97,7 +139,7 @@
 
                     <div class="col-lg-4 order-1 order-lg-2"  style="padding: 5% 2% 0 2%;">
                         <h4>The fixed problem</h4>
-                        <p>Great part of the work regarding the visualisation and characterization of fire focus areas were being done manually by the engineers, resulting in a slow, repetitive and fastidious process which could be prone to error.</p>
+                        <p >Great part of the work in terms of visualisation and characterization of fire areas were being done manually by the engineers, resulting in a slow, repetitive and fastidious process which could be prone to error.</p>
                         <p>Additionally, segmenting the burn area from a video or images was a challenging task due to the erratic behaviour of flames and heavy smoke obstruction of crucial parts of the frame.</p>
                     </div>
 
@@ -118,19 +160,18 @@
                     <div class="col-lg-8 order-2 order-lg-2" style="padding: 0 3%">
                         <img style="width: 100%" src="../assets/firelab/vegetationCLass.png" alt="FIRELab interface showing the result of an automated vegetation classification.">
                         <div class="row">
-                            <div class="col-lg-6" style="padding-right: 2%; padding-top: 2%">
+                            <div class="col-lg-11" style="padding-right: 2%; padding-top: 2%">
                                 <p>This tool can streamline the classification process, employing the automation algorithm, however it does not relinquish the possibility of manually classifying or refining the result.</p>
                             </div>
 
-                            <div class="col-lg-6"  style="padding-left: 2%; padding-top: 2%">
-                                <p>The web application also allows exporting the classified grid in the format of a fuel map that is compatible with third-party apps such as FARSITE.</p>
-                            </div>
+                        
                         </div>
                     </div>
-
+                    
                     <div class="col-lg-4 order-1 order-lg-2"  style="padding: 0 2%;">
                         <h4>Vegetation Classification</h4>
                         <p>An automated classification tool was developed, which takes some user input in the form of the classification of the vegetation in one or more tiles and uses the Euclidean distance between the average colour of a classification and the average colour of a given tile to predict the values for the vegetation classification in that tile.</p>
+                        <p>The web application also allows exporting the classified grid in the format of a fuel map that is compatible with third-party apps such as FARSITE.</p>
                     </div>
 
                 </div>
@@ -161,16 +202,15 @@
             <div class="container-fluid">
                 <div class="row">
 
-                    <div class="col-lg-4 order-3 order-lg-1" style="padding: 0 3% 5% 3%">
+                    <div class="col-lg-4 order-3 order-lg-1" style="padding: 0 1% 5% 1%">
                         <img style="width: 100%" src="../assets/firelab/georef.png" alt="FIRELab interface showing the process of georeferencing.">
                     </div>
-                    <div class="col-lg-4 col-6 order-4 order-lg-2" style="padding: 4% 3% 5% 3%">
+                    <div class="col-lg-4 col-6 order-4 order-lg-2" style="padding: 4% 1% 5% 1%">
                         <img style="width: 100%" src="../assets/firelab/map.png" alt="Map showing the animation of the progression of fire boundaries.">
                     </div>
-                    <div class="col-lg-4 col-6 order-5 order-lg-3" style="padding: 0 3% 5% 3%">
+                    <div class="col-lg-4 col-6 order-5 order-lg-3" style="padding: 0 1% 5% 1%">
                         <img style="width: 100%" src="../assets/firelab/FileDISPERFIRE.png" alt="Extract of a DISPERFIRE readable file.">
                     </div>
-                    <br>
 
                     <div class="col-lg-6 order-1 order-lg-4"  style="padding: 0 2%;">
                         <h4>Georeferencing & Map Visualisation </h4>
@@ -200,7 +240,13 @@
                         <p>Despite several obstacles along the development process, the team feels optimistic with the completed work and the expertise gained via the development of this project.</p>
                         <p>Of course the project is not without flaws and the team recognized the limitation of the work, analysing it and proposing a set of future work to be done, if the project and subsequent investigation is to be continued.</p>
                     </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="body-section" style="margin-bottom: 60px;">
+            <div class="container-fluid">
+                <div class="row">
 
                     <div class="col-lg-8"  style="padding: 0 2%;">
                         <h4>On a more individual level...</h4>
@@ -208,14 +254,29 @@
                         <p>Additionally, the work was developed alongside a bigger team than any of us ever worked with and, personally, it helped me develop some soft-skills in regard to communication and problem-solving as a team.</p>
                     </div>
 
-                    <div class="col-lg-4 offset-lg-8" style="text-align: right; padding: 0 3%;">
-                        <h4 style="text-align: right; color: white; padding-top: 30px;">Next project</h4>
-                        <a href="mais.html" class="next-project">MAIS</a>
+                    <div class="col-lg-4 offset-lg-8 next-project"> 
+                        <h4>Next project</h4>
+                        <a href="mais.html" class="next-project-reference">MAIS</a>
                     </div>
                 </div>
             </div>
         </section>
 
+        <div class="to-top">
+            <a href="#">Top <i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+              </svg></i></a>
+        </div>
+
+        <script>
+            $(window).scroll(function() {
+                let visibility = "visible"
+                if ($(this).scrollTop() < 750) {
+                    visibility = "collapse"
+                }
+                $('.to-top').css({visibility});
+            });        
+        </script>
 
     </body>
 </html>
