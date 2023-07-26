@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1">
     <title>Verifiable Election project</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -34,7 +35,7 @@
 
   <section class="project_header">
     <div class="container-fluid header">
-        <h1>Verifiable Election</h1>
+        <h1 style="font-size: 80px;">Verifiable Election</h1>
         <h2>Using SGX Enclaves</h2>
         
         <div class="project_header_info">
@@ -122,18 +123,18 @@
         <div class="col-lg-5"  style="padding: 0 2%;">
           <h4>The election rules</h4>
           <div class="row">
-            <div class="col-1" style="padding: 0 2%;">
+            <div class="col-2 px-auto">
               <span style="color: white; font-size: 45px">&#9312;</span>
             </div>
-            <div class="col-11" style="padding: 0 2% 0 3%">
+            <div class="col-10" style="padding: 0 2% 0 3%">
               <p>An election outcome is legitimate if and only if all cast and valid votes were included in the final tally.</p>
             </div>
           </div>
           <div class="row">
-            <div class="col-1" style="padding: 0 2%;">
+            <div class="col-2 px-auto">
               <span style="color: white; font-size: 45px">&#9313;</span>
             </div>
-            <div class="col-11" style="padding: 0 2% 0 3%">
+            <div class="col-10" style="padding: 0 2% 0 3%">
               <p>An election outcome is legitimate if and only if all votes were correctly counted in the final outcome.</p>
             </div>
           </div>
@@ -148,7 +149,7 @@
           <br>
 
           <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6" style="padding-bottom: 10px;">
               <h6>Voter App</h6>
               <p style="margin-bottom: 0">Represents a voter in the context of the problem and provides functionalities that allow a user to generate their credentials and cast a vote</p>
             </div>
@@ -177,12 +178,12 @@
           <p>The Voter enclave and respective application represent a voter entity and allows for a set of actions containing the generation of an asymmetric key pair that act as credentials and identify and authenticate the voter, export of the public key and cast a signed and sealed vote, assuring its validity.</p>
         </div>
 
-        <div class="col-lg-3 col-6"  style="padding: 0 0 0 4%; margin-top: auto">
+        <div class="col-lg-3 col-12"  style="padding: 0 0 0 4%; margin-top: auto">
           <h6>Generate</h6>
           <p>Generates the credentials that identify and authenticate the voter. These are an asymmetric key pair and are stored outside the enclave for being used many times. Thus, they had to be sealed in such a way that they should be password-based so that attackers cannot steal and use a voter's credentials, while legitimate credentials' owners can reuse them.</p>
         </div>
 
-        <div class="col-lg-4 col-6"  style="padding: 0 2% 0 2%; margin-top: auto">
+        <div class="col-lg-4 col-12"  style="padding: 0 2% 0 2%; margin-top: auto">
           <h6>Publish</h6>
           <p>Exports a voter public key from its credentials, which will be used as an identifier.</p>
           <br>

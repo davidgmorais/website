@@ -15,20 +15,24 @@ body {
 h1 {
     color: var(--highligh);
     font-family: var(--font-sans);
-    font-size: 125px;
+    font-size: 100px;
     font-weight: bolder;
     margin: 0;
     margin-left: -10px;
 }
 
+.call-to-action {
+    font-size: 80px;
+}
+
 h2 {
     color: white;
     font-family: "OpenSans", sans-serif;
-    font-size: 62px;
+    font-size: 40px;
 }
 
 h3 {
-    font-size: 24px;
+    font-size: 22px;
     font-family: var(--font-mono);
     margin-bottom: .5rem;
     color: white;
@@ -104,13 +108,13 @@ li {
 
 .navbar {
     height: 7vh;
-    background-color: rgba(10, 25, 47, 0.5);
+    background-color: rgba(10, 25, 47, 0.7);
     backdrop-filter: blur(6px);
     padding: 0 50px;
 }
 
 .navbar-nav {
-    background-color: rgba(10, 25, 47, 0.5);
+    background-color: rgba(10, 25, 47, 0.7);
     backdrop-filter: blur(6px);
 }
 
@@ -135,6 +139,32 @@ li {
     text-align: right;
 }
 
+@media (max-width: 992px) {
+    .navbar {
+        height: 7vh;
+        background-color: rgba(10, 25, 47, 0.7);
+        backdrop-filter: blur(6px);
+        padding: 0;
+    }
+
+    .navbar .container-fluid {
+        border-bottom: 2px solid var(--highligh);
+        padding: 0;
+    }
+
+    .navbar-brand {
+        padding-left: 20px;
+    }
+
+    .navbar-nav {
+        padding-right: 20px;
+    }
+
+    .project_header, .project_subheader, .body-section {
+        padding: 0 20px!important;
+    }
+}
+
 .project_header, .project_subheader, .body-section {
     padding: 0 120px;
 }
@@ -157,7 +187,7 @@ li {
 .next-project-reference {
     font-family: var(--font-sans);
     text-align: right;
-    font-size: 120px;
+    font-size: 80px;
     font-weight: bolder;
     text-decoration: none;
 
@@ -171,7 +201,6 @@ li {
 
 .next-project-reference:hover {
     font-family: var(--font-sans);
-    font-size: 120px;
     font-weight: bolder;
     text-decoration: none;
 
@@ -244,7 +273,8 @@ li {
 }
 
 .history-item {
-    margin: 0 8vw;
+    width: calc(100% - 8vw);
+    margin-left: 8vw;
     bottom: 0;
     padding-top: 10vh;
     border-left: 2px solid var(--highligh);
@@ -256,7 +286,7 @@ li {
     }
 
     .to-top {
-        visibility: collapse;
+        visibility: collapse!important;
     }
 }
 
@@ -302,7 +332,7 @@ li {
 }
 
 .history-begin {
-    width: 150%;
+    width: calc(100% - 5vw);
 }
 
 .history-begin div{

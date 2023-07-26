@@ -106,6 +106,10 @@
     #mais #feature-stack {
         padding: 5% 2%!important; 
     }
+
+    .summary {
+        padding: 3rem 2rem 1.5rem 2rem;
+    }
     
 }
 
