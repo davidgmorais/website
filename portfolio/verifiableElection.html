@@ -5,44 +5,46 @@
     <title>Verifiable Election project</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./portfolio.css">
     <script src="../js/bootstrap.min.js"></script>
-    <style>
-
-      #header {
-        padding-top: 160px;
-      }
-
-      @media (min-width: 1080px) {
-        #header {
-          padding-top: 160px;
-
-          background-image:  url("../assets/verifiableElection/header.png");
-          background-position-x: right;
-          background-position-y: bottom;
-          background-origin: content-box;
-          background-size: auto 115%;
-          background-repeat: no-repeat;
-        }
-      }
-
-
-    </style>
+    <script src="../js/jquery-3.7.0.min.js"></script>
   </head>
 
   <body>
 
-  <section class="project_header">
-    <div id="header" class="container-fluid">
-      <h1>Verifiable Election</h1>
-      <h2>Using SGX Enclaves</h2>
-
-      <div class="project_header_info">
-        <h3>_Year = 2022</h3>
-        <h3>_Context = Trusted Environments</h3>
-        <h3>_Project-type = Individual</h3>
+    <nav class="navbar sticky-top">
+      <div class="container-fluid">
+        <a id="navbar-brand" class="navbar-brand" href="/">DM</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarText">
+          <div class="navbar-nav ms-auto">
+              <a class="nav-link openning-tag">{</a>
+              <a id="anchor_about_me" class="nav-link" href="/#about_me">about,</a>
+              <a id="anchor_history" class="nav-link" href="/#history">history,</a>
+              <a id="anchor_projects" class="nav-link" href="/#projects">projects,</a>
+              <a id="anchor_contacts" class="nav-link" href="/#contacts">contacts</a>
+              <a class="nav-link closing-tag">}</a>
+          </div>
+        </div>
       </div>
+  </nav>
+
+  <section class="project_header">
+    <div class="container-fluid header">
+        <h1>Verifiable Election</h1>
+        <h2>Using SGX Enclaves</h2>
+        
+        <div class="project_header_info">
+            <h3>_Year = 2022</h3>
+            <h3>_Context = Trusted Environments</h3>
+            <h3>_Project-type = Individual</h3>
+        </div>
+        <img class="thumbnail md" alt="Verifiable Election project thumbnail" src="../assets/verifiableElection/header.png" />
     </div>
-  </section>
+</section>
 
 
   <section class="project_subheader">
@@ -50,7 +52,7 @@
       <div class="row">
 
 
-        <div class="col-lg-10 order-lg-1 order-2" style="margin: auto 0; padding: 0 5%">
+        <div class="col-lg-10" style="margin: auto 0; padding: 0 5%">
           <div class="col-lg-9">
             <h4>Exploration of secure environments and sealing  of data for the execution of trusted actions.</h4>
           </div>
@@ -60,21 +62,55 @@
           </div>
         </div>
 
-        <div class="col-lg-2 order-lg-2 order-1" style="max-width: 100%">
-          <h5>_Source.code</h5>
-          <a href="https://github.com/davidgmorais/verifiable-election"><p >github.com/davidgmorais /verifiable-election</p></a>
+        <div class="col-12 order-3 summary">
+          <div class="row">
+              <div class="col-lg-5 justify-vertical-center">
+                  <div class="summay-item">
+                      <h5>_Role</h5>
+                      <p>Idiot in charge</p>
+                  </div>
 
-          <h5>_Tools</h5>
-          <ul>
-            <li>C++</li>
-            <li>Intel SGX Enclaves</li>
-            <li>OpenSSL Crypto</li>
-            <li>Python</li>
-          </ul>
+                  <div class="summay-item">
+                      <h5>_Organzation</h5>
+                      <p>University of Aveiro</p>
+                  </div>
+                  
+                  <div class="summay-item">
+                      <h5>_Year</h5>
+                      <p>2022</p></a>
+                  </div>
+                  
+              </div>
+              
+              <div class="col-lg-7 justify-vertical-center">
+                  <div class="summay-item">
+                      <h5>_Source.code</h5>
+                      <a href="https://github.com/davidgmorais/verifiable-election"><p>github.com/davidgmorais/verifiable-election</p></a>
+                  </div>
+                  
+                  <div class="summay-item row">
+                      <h5>_Tools</h5>
+                      <div class="summary-tools-item"><p>C++</p></div>
+                      <div class="summary-tools-item"><p>Intel SGX Enclave</p></div>
+                      <div class="summary-tools-item"><p>OpenSSL Crypto</p></div>
+                      <div class="summary-tools-item"><p>Python</p></div>
+                  </div>
+                  
+                  <div class="summay-item">
+                      <h5>_Keywords</h5>
+                      <p>Trusted environment, Intel SGX, Enclave, Election, Privacy, Integrity</p>
+                  </div>
 
-          <h5>_Deploy</h5>
-          <p style="text-align: left">SGX Enclaves on simulation mode</p>
-        </div>
+                  <div class="summay-item">
+                      <h5>_Deploy</h5>
+                      <p style="text-align: left">SGX Enclaves</p>
+                  </div>
+                      
+              </div>
+          </div>
+      </div>
+
+        
       </div>
     </div>
 
@@ -167,30 +203,24 @@
       <div class="row">
 
 
-        <div class="col-lg-7  offset-lg-1"  style="padding: 0 4% 0 4%;">
+        <div class="col-lg-4 offset-lg-1"  style="padding: 0 4% 0 4%;">
           <h4>Ballot App</h4>
           <p>The Ballot enclave and respective application represent a ballot box entity and allows for a set of actions in regards to an election, which contain actions to generate of an asymmetric key pair that act as credentials to assure vote confidentiality, export the public key, run a valid election and verify if the state of a voter's vote.</p>
-
-          <div class="row">
-            <div class="col-lg-7">
-              <h6>Run</h6>
-              <p>Runs an election, by loading the Ballot's credentials, the public keys of the authorised voters. Then loads and validates the votes, silently excluding the invalid ones and resulting in a list of votes in a random order.</p>
-            </div>
-
-            <div class="col-lg-5">
-              <h6>Check</h6>
-              <p>Checks if a voter's vote was counted, with a process similar to running an election, but no list of votes is produced</p>
-            </div>
-
-          </div>
         </div>
 
-        <div class="col-lg-4"  style="padding: 0 2% 0 2%; margin-top: auto">
+        <div class="col-lg-7"  style="padding: 0 2% 0 2%; margin-top: auto">
           <h6>Generate</h6>
-          <p>Generates the credentials that identify and authenticate the ballot box. These are an asymmetric key pair and are stored outside the enclave for being used many times. Thus, they had to be sealed in such a way that should be based on the enclaves' MRENCLAVE and MRSIGNER values, in order to only allow the current enclave version to access to the votes.</p>
+          <p>Generates the credentials that identify and authenticate the ballot box, which are an asymmetric key pair stored outside the enclave to be used many times. 
+            Thus, they had to be sealed in such a way that should be based on the enclaves' MRENCLAVE and MRSIGNER values, in order to only allow the current enclave version to access to the votes.</p>
 
           <h6>Publish</h6>
           <p>Exports the ballot's public key from its credentials.</p>
+
+          <h6>Run</h6>
+          <p>Runs an election, by loading the Ballot's credentials, the public keys of the authorised voters. Then loads and validates the votes, silently excluding the invalid ones and resulting in a list of votes in a random order.</p>
+       
+          <h6>Check</h6>
+          <p>Checks if a voter's vote was counted, with a process similar to running an election.</p>
         </div>
       </div>
 
@@ -202,10 +232,10 @@
     <div class="container-fluid">
       <div class="row">
 
-        <div class="col-lg-7 order-2 order-lg-2" style="padding: 0 3%">
+        <div class="col-lg-7 order-2 order-lg-2" style="padding: 0 2%">
           <img style="width: 100%" src="../assets/verifiableElection/voterDataStructs.png" alt="SGX Enclave designed data structures for message exchange and data storage">
           <div class="row">
-            <div class="col-lg-10" style="padding-right: 2%; padding-top: 2%">
+            <div class="col-lg-12" style="padding-right: 2%; padding-top: 2%">
               <p>The interfaces were designed in a simple fashion, using the CLI nature to try and minimise the user interaction in run-time in order to simplify and automate testing. Hence the developed tools take their arguments as parameters from the command line call through flags.</p>
             </div>
 
@@ -222,7 +252,6 @@
       </div>
     </div>
   </section>
-  <br>
 
   <section class="body-section">
     <div class="container-fluid">
@@ -236,19 +265,35 @@
 
       <div class="row">
 
-        <div class="col-lg-5"  style="padding: 0 2% 0 2%; margin-bottom: 0">
+        <div class="col-lg-6"  style="padding: 0 2% 0 2%; margin-bottom: 0">
           <h4>On a more individual level...</h4>
           <p>This Verifiable Election was inserted in the context of multiple projects where I was a little out of my comfort zone due to the fact that they were developed in a lower programming language. These combined theoretical security concepts with implementations where little documentation was available which resulted in a lot of push and pull at times during the development and, maybe as a consequence of these facts, more knowledge was obtained. Hence, I can safely say that these projects had a lot of additional value taken away from them as a whole.</p>
           <p>However, they also served to prove to myself that I was capable of doing work at a lower level than I am used to, using concepts that I was having some difficulty grasping at first. Throughout them, I came to the resolution that I was more persistent that I gave myself credit for, ending them with a better sense of the work I could accomplish and, honestly, a new-found interest in topics in regards to areas such as this one.</p>
         </div>
 
-        <div class="col-lg-7" style="text-align: right; padding: 0 3%; margin-top: auto">
-          <h4 style="text-align: right; color: white; padding-top: 30px;">Next project</h4>
-          <a href="firelab.html" class="next-project">FIRELab</a>
+        <div class="col-lg-9 offset-lg-3 order-lg-3 next-project" style="margin-top: -15%">
+          <h4>Next project</h4>
+          <a href="firelab.html" class="next-project-reference">FIRELab</a>
         </div>
       </div>
     </div>
   </section>
+
+  <div class="to-top">
+    <a href="#">Top <i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+      </svg></i></a>
+  </div>
+
+  <script>
+      $(window).scroll(function() {
+          let visibility = "visible"
+          if ($(this).scrollTop() < 750) {
+              visibility = "collapse"
+          }
+          $('.to-top').css({visibility});
+      });        
+  </script>
 
 
   </body>

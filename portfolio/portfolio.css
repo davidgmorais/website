@@ -1,0 +1,128 @@
+:root {
+    --bg-color: #0a192f;
+    --highligh: #92aed9;
+    --accent: #406fb5;
+    --raised: rgba(13, 19, 28, 0.8);
+    --font-sans: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+    --font-mono: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+}
+
+.header {
+    position: relative;
+}
+
+.thumbnail {
+    z-index: -1;
+    width: 77%;
+    height: auto;
+    position: absolute;
+    right: 0;
+    bottom: 8px;
+    filter: brightness(0.5) blur(1px);
+}
+
+.thumbnail.md {
+    width: 57%;
+}
+
+.main-statement-title h4 {
+    margin-bottom: 7vh;
+}
+
+.main-statement {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 7vh;
+}
+
+.summary {
+    border-radius: 5px;
+    border: none;
+    padding: 3rem 6rem 1.5rem 6rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    background-color: rgba(146, 174, 217, 0.05);
+}
+
+.summay-item {
+    margin-bottom: 1.5rem;
+}
+
+.summay-item p{
+    margin-bottom: .5rem;
+}
+
+.summay-item a {
+    text-decoration: none;
+}
+
+.summay-item a p:hover {
+    color: var(--highligh);
+}
+
+.summay-item p{
+    margin-bottom: .5rem;
+}
+
+.justify-vertical-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.summary-tools-item {
+    float: left;
+    width: auto;
+    margin: 3px 3px;
+    background-color: var(--raised);
+    
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.summary-tools-item p {
+    padding: 5px 2px;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+
+.text-justify p {
+    text-align:justify;
+}
+
+@media (max-width: 992px) {
+    .thumbnail {
+        visibility: collapse;
+    }
+
+    .next-project {
+        margin-top:0!important;
+    }
+
+    #mais #feature-stack {
+        padding: 5% 2%!important; 
+    }
+    
+}
+
+
+.next-project {
+    text-align: right; 
+    padding: 0 3%; 
+    margin-top:-8%
+}
+
+.next-project h4 {
+    text-align: right; 
+    color: white; 
+    padding-top: 30px; 
+    margin-bottom:-8%;
+}
+
+#mais #feature-stack {
+    padding: 0 2%; 
+}
