@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1">
     <title>David Morais</title>
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/bootstrap.css">
@@ -13,11 +14,10 @@
     <script type="module" src="./js/app.js"></script>
 </head>
 
-<body>
-
+<body id="index">
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container-fluid">
-          <a id="navbar-brand" class="navbar-brand" href="/">DM</a>
+          <a id="navbar-brand" class="navbar-brand" href=".">DM</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -39,8 +39,8 @@
 
         <div class="col-lg-12">
             <h3 class="sensitive" style="margin-bottom: -20px;">Hi there, my name is</h3>
-            <h1 class="sensitive">David Morais</h1>
-            <h2 class="sensitive" style="font-size: 43px">and I write my silly little code on my silly little computer.</h2>
+            <h1 class="sensitive" style="margin-left: -8px;">David Morais</h1>
+            <h2 class="sensitive">and I write my silly little code on my silly little computer.</h2>
             <br>
         </div>
 
@@ -211,7 +211,7 @@
         <section id="projects" class="col-lg-8 offset-lg-2 col-12" style="padding-top: 10vh;">
             <h3 ><span class="highlight">self.</span>projects</h3>
 
-            <button class="project-card" onclick="window.location='/portfolio/firelab.html'">
+            <button class="project-card" onclick="window.location='portfolio/firelab.html'">
                 <div class="row">
                     <div class="col-10 col-lg-4 m-auto">
                         <img class="project-card-thumbnail" src="./assets/firelab/header.png" alt="Print-screen of FIRELab's main page.">
@@ -234,7 +234,7 @@
                 </div>
             </button>
 
-            <button class="project-card" onclick="window.location='/portfolio/mais.html'">
+            <button class="project-card" onclick="window.location='portfolio/mais.html'">
                 <div class="row">
                     <div class="col-10 col-lg-4 m-auto">
                         <img class="project-card-thumbnail" src="./assets/mais/header.png" alt="Print-screen of MAIS' main page.">
@@ -257,7 +257,7 @@
                 </div>
             </button>
 
-            <button class="project-card" onclick="window.location='/portfolio/verifiableElection.html'">
+            <button class="project-card" onclick="window.location='portfolio/verifiableElection.html'">
                 <div class="row">
                     <div class="col-10 col-lg-4 m-auto">
                         <img class="project-card-thumbnail" src="./assets/verifiableElection/header.png" alt="Print-screen of the terminal from the verifiable election.">
@@ -433,12 +433,12 @@
         <section id="contacts" class="row" style="margin: 0 0 5vh 0">
             <div class="row">
                 <div class="col-lg-6">
-                    <h1>Say it to my face...</h1>
+                    <h1 class="call-to-action">Say it to my face...</h1>
                     <h3 style="margin-top: 20px;">You can reach me any time, even if it's just to suggest some movies <span class="highlight">(I will be juding)</span>.</h3>
                 </div>
 
                 <div class="col-lg-5 offset-lg-1" style="margin-top: 5%;">
-                    <h4 style="color: white;">Come on, don't be shy.</h4>
+                    <h4 style="color: white;  font-size:30px">Come on, don't be shy.</h4>
                     <a href="mailto:david_morais35@live.com.pt" class="btn btn-lg btn-outline-info">Contact me</a>
 
                     <div class="row contacts-links">
