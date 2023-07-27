@@ -162,6 +162,15 @@ li {
     .project_header, .project_subheader, .body-section {
         padding: 0 20px!important;
     }
+
+    .next-project-reference {
+        font-family: var(--font-sans);
+        font-weight: bolder;
+        text-decoration: none;
+    
+        color: var(--highligh)!important;
+        -webkit-text-stroke: 0px!important;
+    }
 }
 
 .project_header, .project_subheader, .body-section {
